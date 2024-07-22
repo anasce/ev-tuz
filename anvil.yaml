@@ -99,7 +99,7 @@ db_schema:
     title: Data4444
 startup: {type: form, module: Homepage}
 secrets: null
-name: Clone of E17
+name: E17 git
 startup_form: null
 native_deps: {head_html: ''}
 correct_dependency_ids: {}
