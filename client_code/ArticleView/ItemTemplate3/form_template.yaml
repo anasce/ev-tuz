@@ -1,0 +1,9 @@
+is_package: true
+container: {type: ColumnPanel}
+components:
+- name: label_1
+  properties: {spacing_above: none, spacing_below: none}
+  type: Label
+  layout_properties: {grid_position: 'URFWBZ,TMNVBG'}
+  data_bindings:
+  - {property: text, code: 'self.item[''naziv'']', writeback: false}

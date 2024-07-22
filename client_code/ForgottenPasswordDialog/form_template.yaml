@@ -1,0 +1,16 @@
+container: {type: ColumnPanel}
+components:
+- name: label_1
+  properties: {role: null, bold: false, align: left, spacing_above: small, width: default, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, text: 'Unesite Vašu adresu el. pošte:'}
+  type: Label
+  layout_properties: {grid_position: 'PGORJR,TRUNWV'}
+- name: email_box
+  properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: none, width: default, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, text: ''}
+  type: TextBox
+  layout_properties: {grid_position: 'PGORJR,TRUNWV'}
+  event_bindings: {pressed_enter: close_alert}
+- name: label_2
+  properties: {role: null, bold: false, align: left, spacing_above: small, width: default, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: 12, text: Poslaćemo Vam mail sa linkom za resetovanje Vaše šifre}
+  type: Label
+  layout_properties: {grid_position: 'PGORJR,TRUNWV'}
+is_package: true

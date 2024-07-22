@@ -1,0 +1,94 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- name: image_1
+  properties: {role: null, vertical_align: top, spacing_above: small, background: '', horizontal_align: left, source: '', foreground: '', display_mode: shrink_to_fit, spacing_below: small, visible: true, border: '', tooltip: '', height: 186}
+  type: Image
+  layout_properties: {grid_position: 'YGGYWR,DJWIVL NPRXIU,YWBENN'}
+  data_bindings:
+  - {property: source, code: 'self.item[''image''] if self.item[''image''] is not None else self.slika', writeback: false}
+- type: FileLoader
+  properties: {spacing_above: none, spacing_below: none, align: left}
+  name: image_uploader
+  layout_properties: {grid_position: 'YGGYWR,DJWIVL CTSJPG,PBJUXV'}
+  event_bindings: {change: image_uploader_change}
+  data_bindings: []
+- name: edit_article_button_copy
+  properties: {role: filled-button, bold: false, align: left, spacing_above: medium, background: '', icon: 'fa:angle-down', underline: false, font: '', icon_align: right, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, tooltip: '', text: Tečajevi}
+  type: Button
+  event_bindings: {click: vidljivost_tecaja_e}
+  layout_properties: {grid_position: 'YGGYWR,DJWIVL ZNNTZH,SEYFQM'}
+- type: Label
+  properties: {role: null, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Prezime:'}
+  name: label_1
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ EKGXUN,POXKTB'}
+- type: TextBox
+  properties: {align: left, spacing_above: none, spacing_below: none}
+  name: title_box
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ WZCMUC,SKVCCT'}
+  data_bindings:
+  - {property: text, code: 'self.item[''title'']', writeback: true}
+  event_bindings: {focus: title_box_focus, pressed_enter: title_box_pressed_enter}
+- name: label_1_copy
+  properties: {role: null, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Ime:'}
+  type: Label
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ WVOZUK,VFQZRI'}
+- name: ime_copy
+  properties: {spacing_above: none, spacing_below: none}
+  type: TextBox
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ WFDVIS,JPVBMO'}
+  data_bindings:
+  - {property: text, code: 'self.item[''ime'']', writeback: true}
+- type: Label
+  properties: {role: null, bold: false, align: left, spacing_above: none, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Organizaciona jedinica:'}
+  name: label_3
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ DQKMMD,XMUZOD'}
+- type: DropDown
+  properties:
+    role: null
+    include_placeholder: false
+    bold: false
+    align: full
+    placeholder: choose category
+    spacing_above: none
+    background: ''
+    underline: false
+    font: ''
+    foreground: ''
+    items: []
+    spacing_below: none
+    visible: true
+    border: ''
+    italic: false
+    enabled: true
+    font_size: null
+    tooltip: ''
+  name: category_box
+  layout_properties: {grid_position: 'YGGYWR,KYEGRZ HTKNRL,BUSFNX'}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''category'']', writeback: true}
+- name: repeating_panel_tecajevi
+  properties: {item_template: ArticleEdit.ItemTemplate5, visible: false}
+  type: RepeatingPanel
+  layout_properties: {grid_position: 'HXHKAJ,KRWBBX'}
+  data_bindings:
+  - {property: items, code: 'self.item[''tecaj'']', writeback: false}
+- name: flow_panel_1
+  properties: {visible: false}
+  type: FlowPanel
+  layout_properties: {grid_position: 'IHEKKR,ITNSOG'}
+  components:
+  - name: drop_down_tecajevi
+    properties: {placeholder: Dodavanje tečaja, visible: true}
+    type: DropDown
+    layout_properties: {width: 652}
+    data_bindings: []
+    event_bindings: {change: drop_down_tecajevi_change}
+  - name: dodaj_tecaj_dugme
+    properties: {role: filled-button, bold: false, align: right, spacing_above: small, background: '', icon: 'fa:plus', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: false, border: '', italic: false, enabled: true, font_size: null, tooltip: Dodavanje tečaja, text: ''}
+    type: Button
+    layout_properties: {}
+    event_bindings: {click: dodaj_tecaj_dugme_click_bb}
+  data_bindings: []
+is_package: true

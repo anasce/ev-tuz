@@ -1,0 +1,41 @@
+container: {type: ColumnPanel}
+components:
+- name: label_3
+  properties: {role: null, bold: false, align: left, spacing_above: small, width: default, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, text: 'El. pošta:'}
+  type: Label
+  layout_properties: {grid_position: ''}
+- name: email_box
+  properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: none, width: default, background: '', type: text, underline: false, font: '', hide_text: false, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, text: ''}
+  type: TextBox
+  layout_properties: {grid_position: ''}
+  event_bindings: {pressed_enter: focus_password, show: fok}
+- name: confirm_lnk
+  properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: 'theme:On Secondary Container', url: '', spacing_below: small, visible: false, border: '', italic: false, font_size: null, tooltip: '', text: Provjerite svoj mail i kliknite na link da potvrdite mail adresu. Kliknite ovdje da vam bude ponovo poslan mail potvrde.}
+  type: Link
+  layout_properties: {grid_position: ''}
+  event_bindings: {click: confirm_lnk_click}
+- name: label_4
+  properties: {role: null, bold: false, align: left, spacing_above: small, width: default, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: none, visible: true, border: '', italic: false, font_size: null, text: 'Šifra:'}
+  type: Label
+  layout_properties: {grid_position: ''}
+- name: password_box
+  properties: {role: null, bold: false, align: left, placeholder: '', spacing_above: none, width: default, background: '', type: text, underline: false, font: '', hide_text: true, foreground: '', spacing_below: small, visible: true, border: '', italic: false, enabled: true, font_size: null, text: ''}
+  type: TextBox
+  layout_properties: {grid_position: ''}
+  event_bindings: {pressed_enter: close_alert}
+- name: login_err_lbl
+  properties: {role: null, bold: true, align: left, spacing_above: small, width: default, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: 'theme:Secondary Container', spacing_below: small, visible: false, border: '', italic: false, font_size: null, text: ''}
+  type: Label
+  layout_properties: {grid_position: ''}
+- name: reset_pw_link
+  properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: 'theme:Secondary Container', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: 'Zaboravili ste šifru?'}
+  type: Link
+  layout_properties: {grid_position: ''}
+  event_bindings: {click: reset_pw_link_click}
+  components:
+  - name: reset_pw_link_copy
+    properties: {role: null, bold: false, align: left, col_widths: '', spacing_above: small, background: '', icon: '', wrap_on: mobile, underline: false, font: '', col_spacing: medium, icon_align: left, foreground: 'theme:Secondary Container', url: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Registracija}
+    type: Link
+    layout_properties: {grid_position: 'RQBCPB,CSZEFN'}
+    event_bindings: {click: reset_pw_link_click_r}
+is_package: true

@@ -1,0 +1,120 @@
+allow_embedding: false
+package_name: Povi_ica_februar_2024___github
+db_schema:
+  articles:
+    title: Articles
+    client: search
+    server: full
+    columns:
+    - name: title
+      admin_ui: {width: 200}
+      type: string
+    - name: content
+      admin_ui: {width: 200}
+      type: string
+    - name: image
+      admin_ui: {order: 2, width: 158}
+      type: media
+    - name: created
+      admin_ui: {width: 200}
+      type: datetime
+    - name: updated
+      admin_ui: {width: 200}
+      type: datetime
+    - name: category
+      admin_ui: {order: 5, width: 433}
+      type: link_single
+      target: categories
+    - name: ime
+      admin_ui: {width: 200}
+      type: string
+    - name: tecaj
+      admin_ui: {width: 252}
+      type: link_multiple
+      target: tecajevi
+  categories:
+    title: Categories
+    client: search
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+  tecajevi:
+    title: Tecajevi
+    client: search
+    server: full
+    columns:
+    - name: naziv
+      admin_ui: {width: 910}
+      type: string
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 240}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: role
+      admin_ui: {width: 200}
+      type: string
+    - name: link_key
+      admin_ui: {width: 200}
+      type: string
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+  data4444:
+    client: search
+    server: full
+    columns:
+    - name: ime
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: title
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: category
+      admin_ui: {order: 1, width: 369}
+      type: string
+    title: Data4444
+startup: {type: form, module: Homepage}
+secrets: null
+name: Clone of E17
+startup_form: null
+native_deps: {head_html: ''}
+correct_dependency_ids: {}
+uplink_visible: true
+renamed: true
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox, server_spec: null}
+dependencies: []
+metadata: {logo_img: 'asset:av.png'}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: true, use_email: true, confirm_email: false}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/email.yml
+  client_config: {}
+  server_config: {}

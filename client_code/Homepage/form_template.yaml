@@ -1,0 +1,153 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: flow_panel_2
+    properties: {}
+    type: FlowPanel
+    layout_properties: {grid_position: 'RODLHH,PDICQG'}
+    components:
+    - type: Button
+      properties:
+        role: filled-button
+        bold: false
+        align: center
+        spacing_above: small
+        background: ''
+        icon: fa:plus-circle
+        underline: false
+        font: ''
+        icon_align: left
+        foreground: ''
+        spacing_below: large
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+        text: |
+          Dodavanje
+      name: add_article_button
+      event_bindings: {click: add_article_button_click}
+  - name: flow_panel_3
+    properties: {align: right}
+    type: FlowPanel
+    layout_properties: {grid_position: 'RODLHH,LLMJCL'}
+    components:
+    - name: text_box_pret
+      properties: {placeholder: ''}
+      type: TextBox
+      event_bindings: {pressed_enter: pret_button_click}
+      layout_properties: {}
+    - name: pret_button
+      properties:
+        role: filled-button
+        bold: false
+        align: center
+        spacing_above: small
+        background: ''
+        icon: fa:search
+        underline: false
+        font: ''
+        icon_align: left
+        foreground: ''
+        spacing_below: large
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+        text: |
+          Pretraga
+      type: Button
+      event_bindings: {click: pret_button_click}
+  - type: RepeatingPanel
+    properties: {role: null, spacing_above: small, background: '', item_template: ArticleView, foreground: '', items: null, spacing_below: small, visible: true, border: '', tooltip: ''}
+    name: articles_panel
+    layout_properties: {slot: title, grid_position: 'XRGDXR,JQCHKL'}
+  - name: flow_panel_1
+    properties: {align: center}
+    type: FlowPanel
+    layout_properties: {grid_position: 'NMJXHY,IZZWED'}
+    components:
+    - name: tecaj_button
+      properties:
+        role: filled-button
+        bold: false
+        align: center
+        spacing_above: small
+        background: ''
+        icon: fa:plus-circle
+        underline: false
+        font: ''
+        icon_align: left
+        foreground: ''
+        spacing_below: large
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+        text: |
+          Dodavanje tečaja
+      type: Button
+      event_bindings: {click: dodaj_tecaj_dugme}
+    - name: pret_button_copy
+      properties:
+        role: filled-button
+        bold: false
+        align: center
+        spacing_above: small
+        background: ''
+        icon: fa:file-pdf-o
+        underline: false
+        font: ''
+        icon_align: left
+        foreground: ''
+        spacing_below: large
+        visible: true
+        border: ''
+        italic: false
+        enabled: true
+        font_size: null
+        tooltip: ''
+        text: |2+
+
+      type: Button
+      event_bindings: {click: pdf_download}
+      layout_properties: {}
+  - type: Label
+    properties: {role: null, bold: false, align: center, spacing_above: large, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: ' App 👩‍🚀 com'}
+    name: label_1
+    layout_properties: {grid_position: 'SFQUXZ,SRTXDQ'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: XYPanel
+    properties: {height: 28, width: 322}
+    name: xy_panel_1
+    layout_properties: {grid_position: 'WDFKVY,ZFCXXM', width: 398}
+    components:
+    - type: Image
+      properties: {role: null, vertical_align: center, spacing_above: small, background: '', horizontal_align: center, source: 'https://em-content.zobj.net/source/microsoft-teams/337/anatomical-heart_1fac0.png', foreground: '', display_mode: shrink_to_fit, spacing_below: small, visible: true, border: '', tooltip: '', height: 58}
+      name: image_1
+      layout_properties: {grid_position: 'TSJFQB,PXILGY', x: 536.2000122070312, y: 57, width: 30}
+    - type: Image
+      properties: {role: null, vertical_align: center, spacing_above: small, background: '', horizontal_align: center, source: 'https://em-content.zobj.net/source/microsoft-teams/337/anatomical-heart_1fac0.png', foreground: '', display_mode: shrink_to_fit, spacing_below: small, visible: true, border: '', tooltip: '', height: 50}
+      name: image_2
+      layout_properties: {x: 300.7750244140625, y: -3, width: 55}
+    - type: Label
+      properties: {role: null, bold: false, align: left, spacing_above: small, background: '', icon: '', underline: false, font: '', icon_align: left, foreground: '', spacing_below: small, visible: true, border: '', italic: false, font_size: null, tooltip: '', text: Маде ввитх}
+      name: label_2
+      layout_properties: {x: 175.7750244140625, y: 1, width: 115}
