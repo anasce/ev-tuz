@@ -1,5 +1,5 @@
 allow_embedding: false
-package_name: Po
+package_name: Ev_Tuz
 db_schema:
   articles:
     title: Articles
