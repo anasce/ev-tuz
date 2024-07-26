@@ -58,7 +58,7 @@ class ArticleEdit(ArticleEditTemplate):
       pass
 
     def title_box_focus(self, **event_args):
-      """This method is called when the TextBox gets focus alalaltra"""
+      """This method is called when the TextBox gets focus """
       pass
   
 
