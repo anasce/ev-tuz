@@ -20,6 +20,7 @@ class Homepage(HomepageTemplate):
         # app_tables.categories.delete_all_rows()
         self.refresh_articles()
         # Set an event handler on the RepeatingPanel (our 'articles_panel')
+        # Set an event handler on the RepeatingPanel (our 'articles_panel')
         self.articles_panel.set_event_handler("x-delete-article", self.delete_article)
         login_flow.login_with_form()        
         if anvil.server.call("rola_k"):
