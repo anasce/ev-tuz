@@ -223,3 +223,31 @@ def search_records(search_string):
         for r in app_tables.articles.search(tables.order_by("created", ascending=False))
         if search_string in r["title"].lower()
     ]
+
+@anvil.server.callable
+def add_sve_category(): 
+         
+         pod=[
+"[833851,1144398071]","Vrhovno državno tužilaštvo Crne Gore",
+"[833851,1144398137]","Specijalno državno tužilaštvo Crne Gore",
+"[833851,1144398301]","Više državno tužilaštvo Podgorica",
+"[833851,1144398458]","Više državno tužilaštvo Bijelo Polje",
+"[833851,1144398507]","Osnovno državno tužilaštvo Bar",
+"[833851,1144398547]","Osnovno državno tužilaštvo Berane",
+"[833851,1144398606]","Osnovno državno tužilaštvo Bijelo Polje",
+"[833851,1144398660]","Osnovno državno tužilaštvo Kolašin",
+"[833851,1144398710]","Osnovno državno tužilaštvo Kotor",
+"[833851,1144398753]","Osnovno državno tužilaštvo Nikšić",
+"[833851,1144398812]","Osnovno državno tužilaštvo Plav",
+"[833851,1144398861]","Osnovno državno tužilaštvo Pljevlja ",
+"[833851,1144398982]","Osnovno državno tužilaštvo Podgorica",
+"[833851,1144399961]","Osnovno državno tužilaštvo Rožaje",
+"[833851,1144399987]","Osnovno državno tužilaštvo Ulcinj",
+"[833851,1144399993]","Osnovno državno tužilaštvo Herceg Novi",
+"[833851,1144408239]","Osnovno državno tužilaštvo Cetinje",
+"[833851,1183403062]",""]
+ 
+         
+         for a in range(1,len(pod),2):
+              print(pod[a])
+              app_tables.categories.add_row(name=pod[a])
